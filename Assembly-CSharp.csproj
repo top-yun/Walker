@@ -66,11 +66,15 @@
     <Compile Include="Assets\Angie Sprite\EditorScripts\OpenMoreGames.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\ButtonNextAnim.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\Enums.cs" />
+    <Compile Include="Assets\BlackHoleScript.cs" />
+    <Compile Include="Assets\PlanetController.cs" />
+    <Compile Include="Assets\PlayerScript.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\FlyingPlayerController.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\SceneSelecter.cs" />
+    <Compile Include="Assets\WhiteHoleScript.cs" />
     <None Include="Assets\Sepiroth\LICENSE.txt" />
     <None Include="Assets\Sepiroth\README.txt" />
     <Reference Include="UnityEngine">
@@ -613,6 +617,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -676,6 +683,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
@@ -690,12 +700,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/ECS 강의/Walker/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
