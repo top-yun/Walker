@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
 
     public float jumpPower;
     public float speed;
+    public float DangerHeight;
+    public Vector2 responePos;
 
     WaitForSeconds jumpDelay;
     WaitForSeconds jumpCooltime;
@@ -24,10 +26,11 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        this.transform.position = responePos;
         rd2d = GetComponent<Rigidbody2D>();
         anime = GetComponent<Animator>();
 
-        jumpDelay = new WaitForSeconds(0.3f);
+        jumpDelay = new WaitForSeconds(0.15f);
         jumpCooltime = new WaitForSeconds(0.05f);
 
         isGround = false;
@@ -54,6 +57,7 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -100,7 +104,13 @@ public class PlayerScript : MonoBehaviour
         else if (leftright < 0 && facingRight)
             animeflip();
 
+        if (this.transform.position.y < DangerHeight || Input.GetKeyDown(KeyCode.R))
+        {
+            this.transform.position = responePos; // falldown check
+            rd2d.velocity = Vector2.zero;
+        }
     }
+
 
     private void FixedUpdate()
     {
@@ -114,4 +124,5 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
+
 }

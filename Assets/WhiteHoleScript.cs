@@ -29,9 +29,4 @@ public class WhiteHoleScript : MonoBehaviour
             playerRB.AddForce(gravityScale * gravityPos * Mathf.Pow(Mathf.InverseLerp(gravityBound, 0, length), 2));
         }
     }
-
-    void OnMouseDown()
-    {
-        Destroy(this.gameObject);
-    }
 }

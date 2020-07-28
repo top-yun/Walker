@@ -99,7 +99,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 7709992037715633406}
   m_Bounds:
-    m_Center: {x: 0.20290077, y: -0.00077843666, z: 0}
+    m_Center: {x: 0.17580974, y: -0.5854777, z: 0}
     m_Extent: {x: 0.89074755, y: 0.6802683, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -234,8 +234,8 @@ MonoBehaviour:
   - {fileID: 5916816695784495371}
   - {fileID: 1473959974734544024}
   m_Bounds:
-    m_Center: {x: -0.04637152, y: -0.05743158, z: 0}
-    m_Extent: {x: 0.21470845, y: 0.5767946, z: 0}
+    m_Center: {x: -0.028442234, y: -0.6424391, z: 0}
+    m_Extent: {x: 0.22853613, y: 0.5745244, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &2118649061211014183
@@ -496,7 +496,7 @@ MonoBehaviour:
   - {fileID: 6173777364501428677}
   - {fileID: 7709992037715633406}
   m_Bounds:
-    m_Center: {x: 0.13038492, y: 0.060675085, z: 0}
+    m_Center: {x: 0.103293896, y: -0.52402425, z: 0}
     m_Extent: {x: 0.54932064, y: 0.93216825, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -641,8 +641,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 462196769317521869}
   m_Bounds:
-    m_Center: {x: 0.1536937, y: 0.04822558, z: 0}
-    m_Extent: {x: 0.41073534, y: 0.98200715, z: 0}
+    m_Center: {x: -0.04032868, y: -0.52714634, z: 0}
+    m_Extent: {x: 0.58101857, y: 0.9616103, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3664815228446667496
@@ -837,7 +837,7 @@ MonoBehaviour:
   - {fileID: 5208216351704182499}
   - {fileID: 6561589013639213943}
   m_Bounds:
-    m_Center: {x: 0.14669108, y: -0.000121474266, z: 0}
+    m_Center: {x: 0.11960006, y: -0.58482087, z: 0}
     m_Extent: {x: 0.28200072, y: 0.79952276, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -942,8 +942,8 @@ MonoBehaviour:
   - {fileID: 4664692111719987545}
   - {fileID: 2420060929103774364}
   m_Bounds:
-    m_Center: {x: -0.0077864826, y: -0.008344889, z: 0}
-    m_Extent: {x: 0.26309723, y: 0.60659206, z: 0}
+    m_Center: {x: -0.021787703, y: -0.5856347, z: 0}
+    m_Extent: {x: 0.27579877, y: 0.60647154, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5955925186137874163
@@ -1046,8 +1046,8 @@ MonoBehaviour:
   - {fileID: 4842426183254495905}
   - {fileID: 7581656660161678026}
   m_Bounds:
-    m_Center: {x: 0.096218795, y: 0.04559481, z: 0}
-    m_Extent: {x: 0.37951243, y: 1.158196, z: 0}
+    m_Center: {x: 0.06912777, y: -0.5391046, z: 0}
+    m_Extent: {x: 0.37951243, y: 1.1581959, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &6058386742475367837
@@ -1181,8 +1181,8 @@ MonoBehaviour:
   - {fileID: 4625924948824377612}
   - {fileID: 4664692111719987545}
   m_Bounds:
-    m_Center: {x: -0.06118056, y: -0.10753727, z: 0}
-    m_Extent: {x: 0.1817393, y: 0.5470639, z: 0}
+    m_Center: {x: -0.023660421, y: -0.6896632, z: 0}
+    m_Extent: {x: 0.18556398, y: 0.54266906, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &6468465692156297540
@@ -1378,8 +1378,8 @@ MonoBehaviour:
   - {fileID: 4664692111719987545}
   - {fileID: 1473959974734544024}
   m_Bounds:
-    m_Center: {x: 0.000000059604645, y: 0.06643656, z: 0}
-    m_Extent: {x: 0.695, y: 0.49865496, z: 0}
+    m_Center: {x: -0.027090967, y: -0.5182628, z: 0}
+    m_Extent: {x: 0.695, y: 0.4986549, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &8329316054773677612
@@ -1393,11 +1393,13 @@ GameObject:
   - component: {fileID: 4131933827455108092}
   - component: {fileID: 1304314614611012908}
   - component: {fileID: 33312446401407109}
-  - component: {fileID: 33312446401407108}
   - component: {fileID: 2143088817}
+  - component: {fileID: 533924254}
+  - component: {fileID: 33312446401407108}
+  - component: {fileID: 533924248}
   m_Layer: 0
   m_Name: Sepiroth Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1450,31 +1452,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1000
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 30
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &33312446401407108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8329316054773677612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74b1f8f6b0a0ed45859cdf97013e789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpKey: 32
-  leftKey: 97
-  rightKey: 100
-  jumpPower: 6000
-  speed: 0.1
 --- !u!58 &2143088817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1491,6 +1476,73 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -1.8}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!61 &533924254
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329316054773677612}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04974425, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0994883, y: 4}
+  m_EdgeRadius: 0
+--- !u!114 &33312446401407108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329316054773677612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74b1f8f6b0a0ed45859cdf97013e789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpKey: 32
+  leftKey: 97
+  rightKey: 100
+  jumpPower: 15
+  speed: 200
+  DangerHeight: -10
+  responePos: {x: 0, y: 1}
+--- !u!114 &533924248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329316054773677612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b01e5ca4f522c40a53f1103a0921cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blackhole: {fileID: 3353831444775564720, guid: 760d488daa93c26408ee598f8b32eff7,
+    type: 3}
+  OnBlackhole: 0
+  Whitehole: {fileID: 3676982653555928356, guid: 42768f4fa99f0634594efa3df33df4d7,
+    type: 3}
+  OnWhitehole: 0
+  boundary: {fileID: 8830595404226326135, guid: ba2aaf6a0eac603458d4ebf74bf3c78e,
+    type: 3}
+  maxRange: 10
+  timeDelay: 0.3
 --- !u!1 &8631745515112352532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,7 +1673,7 @@ MonoBehaviour:
   - {fileID: 4374390591634215761}
   - {fileID: 4140987986152583507}
   m_Bounds:
-    m_Center: {x: 0.104299426, y: -0.052871346, z: 0}
+    m_Center: {x: 0.0772084, y: -0.63757074, z: 0}
     m_Extent: {x: 0.16032794, y: 0.7423732, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1724,8 +1776,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 6173777364501428677}
   m_Bounds:
-    m_Center: {x: 0.019649386, y: 0.0059186816, z: 0}
-    m_Extent: {x: 0.7222507, y: 0.9482514, z: 0}
+    m_Center: {x: -0.00744164, y: -0.5787808, z: 0}
+    m_Extent: {x: 0.7222507, y: 0.94825137, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &8977562764524341081
@@ -1828,7 +1880,7 @@ MonoBehaviour:
   - {fileID: 5916816695784495371}
   - {fileID: 1473959974734544024}
   m_Bounds:
-    m_Center: {x: -0.023159534, y: 0.0035694838, z: 0}
-    m_Extent: {x: 0.29320058, y: 0.66521585, z: 0}
+    m_Center: {x: -0.027096033, y: -0.58550215, z: 0}
+    m_Extent: {x: 0.27500343, y: 0.66353583, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
