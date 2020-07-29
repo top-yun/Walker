@@ -14,6 +14,7 @@ public class PlanetController : MonoBehaviour
 
     enum hole
     {
+        None,
         blackhole,
         whitehole
     }
@@ -24,14 +25,13 @@ public class PlanetController : MonoBehaviour
     private bool isblockcool;
     private bool iswhitecool;
     private WaitForSeconds Cooltime;
+    private hole hasClicked;
+    private Coroutine delayCorou;
 
     // Start is called before the first frame update
     void Start()
     {
-        hasBlackhole = null;
-        hasWhitehole = null;
-        isblockcool = true;
-        iswhitecool = true;
+        resetAll();
 
         Cooltime = new WaitForSeconds(2f);
     }
@@ -49,6 +49,13 @@ public class PlanetController : MonoBehaviour
             iswhitecool = true;
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        Time.timeScale = 1f;
+        Destroy(hasBoundary);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -59,29 +66,12 @@ public class PlanetController : MonoBehaviour
                 if (hasBoundary == null)
                 {
                     hasBoundary = Instantiate(boundary, this.transform);
-                    hasBoundary.transform.localScale = new Vector2(0.78f * maxRange, 0.78f * maxRange);
+                    hasBoundary.transform.localScale = new Vector2( 4* maxRange, 4* maxRange);
                 }
-            } else
-            {
-                Destroy(hasBlackhole);
+                hasClicked = hole.blackhole;
+                delayCorou = StartCoroutine(Delay());
             }
         }
-
-        if (Input.GetKeyUp(KeyCode.Alpha1) && Time.timeScale == timeDelay)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Vector3 rayDir = new Vector3(ray.origin.x, ray.origin.y);
-
-            if (maxRange > Vector3.Distance(rayDir, this.transform.position))
-            {
-                hasBlackhole = Instantiate(Blackhole, rayDir, transform.rotation);
-            }
-            Time.timeScale = 1;
-            Destroy(hasBoundary);
-            StartCoroutine(cooltime(hole.blackhole));
-        }
-
-
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             if (hasWhitehole == null && Time.timeScale == 1 && iswhitecool)
@@ -90,25 +80,43 @@ public class PlanetController : MonoBehaviour
                 if (hasBoundary == null)
                 {
                     hasBoundary = Instantiate(boundary, this.transform);
-                    hasBoundary.transform.localScale = new Vector2(0.78f * maxRange, 0.78f * maxRange);
+                    hasBoundary.transform.localScale = new Vector2(4 * maxRange, 4 * maxRange);
                 }
-            } else
-            {
-                Destroy(hasWhitehole);
+                hasClicked = hole.whitehole;
+                delayCorou = StartCoroutine(Delay());
             }
         }
-        if (Input.GetKeyUp(KeyCode.Alpha2) && Time.timeScale == timeDelay)
+
+        if (Input.GetMouseButton(0) && Time.timeScale == timeDelay)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 rayDir = new Vector3(ray.origin.x, ray.origin.y);
 
             if (maxRange > Vector3.Distance(rayDir, this.transform.position))
             {
-                hasWhitehole = Instantiate(Whitehole, rayDir, transform.rotation);
+                if (hasClicked == hole.blackhole)
+                    hasBlackhole = Instantiate(Blackhole, rayDir, transform.rotation);
+                else if (hasClicked == hole.whitehole)
+                    hasWhitehole = Instantiate(Whitehole, rayDir, transform.rotation);
             }
+            StopCoroutine(delayCorou);
             Time.timeScale = 1;
             Destroy(hasBoundary);
-            StartCoroutine(cooltime(hole.whitehole));
+            if (hasClicked == hole.blackhole)
+                StartCoroutine(cooltime(hole.blackhole));
+            else if (hasClicked == hole.whitehole)
+                StartCoroutine(cooltime(hole.whitehole));
         }
+    }
+
+    public void resetAll()
+    {
+        Destroy(hasBlackhole);
+        Destroy(hasWhitehole);
+
+        isblockcool = true;
+        iswhitecool = true;
+
+        hasClicked = hole.None;
     }
 }

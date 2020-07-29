@@ -67,6 +67,8 @@
     <Compile Include="Assets\Angie Sprite\Scripts\ButtonNextAnim.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\Enums.cs" />
     <Compile Include="Assets\BlackHoleScript.cs" />
+    <Compile Include="Assets\BoxScript.cs" />
+    <Compile Include="Assets\IrregularCircleUI\Scripts\CircleAnimation.cs" />
     <Compile Include="Assets\PlanetController.cs" />
     <Compile Include="Assets\PlayerScript.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\CharacterController2D.cs" />

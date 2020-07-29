@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
         anime = GetComponent<Animator>();
 
         jumpDelay = new WaitForSeconds(0.15f);
-        jumpCooltime = new WaitForSeconds(0.05f);
+        jumpCooltime = new WaitForSeconds(0.5f);
 
         isGround = false;
         facingRight = true;
@@ -43,11 +43,9 @@ public class PlayerScript : MonoBehaviour
         if (jumpLock)
         {
             jumpLock = false;
-            Debug.Log("jump1");
             anime.SetBool("isJumping", true);
             yield return jumpDelay;
 
-            Debug.Log("jump2");
             rd2d.velocity += Vector2.up * jumpPower;
 
             yield return jumpCooltime;
@@ -59,22 +57,23 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "MapBlock")
+        foreach (ContactPoint2D cp in collision.contacts)
         {
-            isGround = true;
+            if (Vector2.Dot(cp.normal, Vector2.up) > 0.5)
+            {
+                isGround = true;
+                return;
+            }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "MapBlock")
-        {
-            isGround = false;
-        }
+        isGround = false;
     }
-
+    
     void animeflip()
     {
         facingRight = !facingRight;
@@ -106,11 +105,16 @@ public class PlayerScript : MonoBehaviour
 
         if (this.transform.position.y < DangerHeight || Input.GetKeyDown(KeyCode.R))
         {
-            this.transform.position = responePos; // falldown check
-            rd2d.velocity = Vector2.zero;
+            Reset();
         }
     }
 
+    private void Reset()
+    {
+        this.transform.position = responePos; // falldown check
+        rd2d.velocity = Vector2.zero;
+        this.GetComponent<PlanetController>().resetAll();
+    }
 
     private void FixedUpdate()
     {
@@ -118,10 +122,10 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKey(jumpKey) && isGround)
         {
-            Debug.Log("jump0");
             isGround = false;
             StartCoroutine(Jump());
         }
+
 
     }
 
