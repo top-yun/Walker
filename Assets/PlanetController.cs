@@ -54,6 +54,8 @@ public class PlanetController : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         Time.timeScale = 1f;
         Destroy(hasBoundary);
+        StartCoroutine(cooltime(hole.blackhole));
+        StartCoroutine(cooltime(hole.whitehole));
     }
 
     // Update is called once per frame
@@ -70,6 +72,9 @@ public class PlanetController : MonoBehaviour
                 }
                 hasClicked = hole.blackhole;
                 delayCorou = StartCoroutine(Delay());
+            } else
+            {
+                Destroy(hasBlackhole);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -84,6 +89,9 @@ public class PlanetController : MonoBehaviour
                 }
                 hasClicked = hole.whitehole;
                 delayCorou = StartCoroutine(Delay());
+            } else
+            {
+                Destroy(hasWhitehole);
             }
         }
 
