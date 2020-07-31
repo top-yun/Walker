@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlanetController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlanetController : MonoBehaviour
     public GameObject boundary;
     public float maxRange;
     public float timeDelay;
+
+    public Slider blackCooltime;
+    public Slider whiteCooltime;
 
     enum hole
     {
@@ -24,7 +28,6 @@ public class PlanetController : MonoBehaviour
     private GameObject hasBoundary;
     private bool isblockcool;
     private bool iswhitecool;
-    private WaitForSeconds Cooltime;
     private hole hasClicked;
     private Coroutine delayCorou;
 
@@ -33,20 +36,34 @@ public class PlanetController : MonoBehaviour
     {
         resetAll();
 
-        Cooltime = new WaitForSeconds(2f);
     }
 
     IEnumerator cooltime(hole h)
     {
         if (h == hole.blackhole)
+        {
             isblockcool = false;
-        else if (h == hole.whitehole)
-            iswhitecool = false;
-        yield return Cooltime;
-        if (h == hole.blackhole)
+            blackCooltime.value = 0;
+            while (blackCooltime.value != 2)
+            {
+                blackCooltime.value = Mathf.Clamp(blackCooltime.value + Time.smoothDeltaTime, 0 , 2);
+                yield return null;
+            }
+         
             isblockcool = true;
+            
+        }
         else if (h == hole.whitehole)
+        {
+            iswhitecool = false;
+            whiteCooltime.value = 0;
+            while (whiteCooltime.value != 2)
+            {
+                whiteCooltime.value = Mathf.Clamp(whiteCooltime.value + Time.smoothDeltaTime, 0, 2);
+                yield return null;
+            }
             iswhitecool = true;
+        }
     }
 
     IEnumerator Delay()
@@ -72,9 +89,10 @@ public class PlanetController : MonoBehaviour
                 }
                 hasClicked = hole.blackhole;
                 delayCorou = StartCoroutine(Delay());
-            } else
+            } else if (hasBlackhole != null)
             {
                 Destroy(hasBlackhole);
+                StartCoroutine(cooltime(hole.blackhole));
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -89,9 +107,10 @@ public class PlanetController : MonoBehaviour
                 }
                 hasClicked = hole.whitehole;
                 delayCorou = StartCoroutine(Delay());
-            } else
+            } else if (hasWhitehole != null)
             {
                 Destroy(hasWhitehole);
+                StartCoroutine(cooltime(hole.whitehole));
             }
         }
 
@@ -110,10 +129,6 @@ public class PlanetController : MonoBehaviour
             StopCoroutine(delayCorou);
             Time.timeScale = 1;
             Destroy(hasBoundary);
-            if (hasClicked == hole.blackhole)
-                StartCoroutine(cooltime(hole.blackhole));
-            else if (hasClicked == hole.whitehole)
-                StartCoroutine(cooltime(hole.whitehole));
         }
     }
 
@@ -124,6 +139,10 @@ public class PlanetController : MonoBehaviour
 
         isblockcool = true;
         iswhitecool = true;
+
+        blackCooltime.value = 2;
+        whiteCooltime.value = 2;
+
 
         hasClicked = hole.None;
     }

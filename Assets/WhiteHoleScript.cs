@@ -53,7 +53,7 @@ public class WhiteHoleScript : MonoBehaviour
             Vector2 gravityPos = new Vector2(playerTF.position.x - this.transform.position.x, playerTF.position.y - this.transform.position.y).normalized;
             playerRB.AddForce(gravityScale * gravityPos * Mathf.Pow(Mathf.InverseLerp(gravityBound, 0, length), 2));
         }
-        foreach (GameObject obj in Boxs)
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Box"))
         {
             length = Vector2.Distance(this.transform.position, obj.transform.position);
             if (length < objGravityBound)

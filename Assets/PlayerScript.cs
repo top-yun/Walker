@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     private float leftright = 0;
     private bool jumpLock;
 
+    
     void Start()
     {
         this.transform.position = responePos;
@@ -56,7 +58,6 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-
     void OnCollisionStay2D(Collision2D collision)
     {
         foreach (ContactPoint2D cp in collision.contacts)
@@ -69,6 +70,13 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Spike")
+        {
+            Reset();
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         isGround = false;
@@ -111,9 +119,12 @@ public class PlayerScript : MonoBehaviour
 
     private void Reset()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        /*
         this.transform.position = responePos; // falldown check
         rd2d.velocity = Vector2.zero;
         this.GetComponent<PlanetController>().resetAll();
+        */
     }
 
     private void FixedUpdate()
