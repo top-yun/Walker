@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Angie Sprite\EditorScripts\OpenMoreGames.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\ButtonNextAnim.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\Enums.cs" />
     <Compile Include="Assets\BlackHoleScript.cs" />

@@ -11,6 +11,7 @@ public class PlanetController : MonoBehaviour
     public bool OnWhitehole;
     public GameObject boundary;
     public float maxRange;
+    public float minRange;
     public float timeDelay;
 
     public Slider blackCooltime;
@@ -25,7 +26,8 @@ public class PlanetController : MonoBehaviour
 
     private GameObject hasBlackhole;
     private GameObject hasWhitehole;
-    private GameObject hasBoundary;
+    private GameObject hasMaxBoundary;
+    private GameObject hasMinBoundary;
     private bool isblockcool;
     private bool iswhitecool;
     private hole hasClicked;
@@ -70,7 +72,8 @@ public class PlanetController : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2f);
         Time.timeScale = 1f;
-        Destroy(hasBoundary);
+        Destroy(hasMaxBoundary);
+        Destroy(hasMinBoundary);
         StartCoroutine(cooltime(hole.blackhole));
         StartCoroutine(cooltime(hole.whitehole));
     }
@@ -82,10 +85,13 @@ public class PlanetController : MonoBehaviour
             if (hasBlackhole == null && Time.timeScale == 1 && isblockcool)
             {
                 Time.timeScale = timeDelay;
-                if (hasBoundary == null)
+                if (hasMaxBoundary == null)
                 {
-                    hasBoundary = Instantiate(boundary, this.transform);
-                    hasBoundary.transform.localScale = new Vector2( 4* maxRange, 4* maxRange);
+                    hasMaxBoundary = Instantiate(boundary, this.transform);
+                    hasMinBoundary = Instantiate(boundary, this.transform);
+
+                    hasMaxBoundary.transform.localScale = new Vector2( 4* maxRange, 4* maxRange);
+                    hasMinBoundary.transform.localScale = new Vector2(4 * minRange, 4 * minRange);
                 }
                 hasClicked = hole.blackhole;
                 delayCorou = StartCoroutine(Delay());
@@ -100,10 +106,13 @@ public class PlanetController : MonoBehaviour
             if (hasWhitehole == null && Time.timeScale == 1 && iswhitecool)
             {
                 Time.timeScale = timeDelay;
-                if (hasBoundary == null)
+                if (hasMaxBoundary == null)
                 {
-                    hasBoundary = Instantiate(boundary, this.transform);
-                    hasBoundary.transform.localScale = new Vector2(4 * maxRange, 4 * maxRange);
+                    hasMaxBoundary = Instantiate(boundary, this.transform);
+                    hasMinBoundary = Instantiate(boundary, this.transform);
+
+                    hasMaxBoundary.transform.localScale = new Vector2(4 * maxRange, 4 * maxRange);
+                    hasMinBoundary.transform.localScale = new Vector2(4 * minRange, 4 * minRange);
                 }
                 hasClicked = hole.whitehole;
                 delayCorou = StartCoroutine(Delay());
@@ -118,8 +127,9 @@ public class PlanetController : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 rayDir = new Vector3(ray.origin.x, ray.origin.y);
+            float distance = Vector3.Distance(rayDir, this.transform.position);
 
-            if (maxRange > Vector3.Distance(rayDir, this.transform.position))
+            if (maxRange > distance && minRange < distance)
             {
                 if (hasClicked == hole.blackhole)
                     hasBlackhole = Instantiate(Blackhole, rayDir, transform.rotation);
@@ -128,7 +138,8 @@ public class PlanetController : MonoBehaviour
             }
             StopCoroutine(delayCorou);
             Time.timeScale = 1;
-            Destroy(hasBoundary);
+            Destroy(hasMaxBoundary);
+            Destroy(hasMinBoundary);
         }
     }
 
@@ -143,6 +154,7 @@ public class PlanetController : MonoBehaviour
         blackCooltime.value = 2;
         whiteCooltime.value = 2;
 
+        Time.timeScale = 1f;
 
         hasClicked = hole.None;
     }
