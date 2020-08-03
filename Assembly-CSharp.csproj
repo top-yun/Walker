@@ -67,7 +67,9 @@
     <Compile Include="Assets\Angie Sprite\Scripts\Enums.cs" />
     <Compile Include="Assets\BlackHoleScript.cs" />
     <Compile Include="Assets\BoxScript.cs" />
+    <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\DontDestory.cs" />
+    <Compile Include="Assets\FallingBoxScript.cs" />
     <Compile Include="Assets\IrregularCircleUI\Scripts\CircleAnimation.cs" />
     <Compile Include="Assets\PlanetController.cs" />
     <Compile Include="Assets\PlayerScript.cs" />

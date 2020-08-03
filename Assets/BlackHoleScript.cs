@@ -21,7 +21,7 @@ public class BlackHoleScript : MonoBehaviour
     void Start()
     {
         GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
-        Boxs = GameObject.FindGameObjectsWithTag("Box");
+        
         playerRB = playerGO.GetComponent<Rigidbody2D>();
         playerTF = playerGO.GetComponent<Transform>();
 
@@ -43,7 +43,7 @@ public class BlackHoleScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float length = Vector3.Distance(this.transform.position, playerTF.position);
 

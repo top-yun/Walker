@@ -3,8 +3,10 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BlackHoleScript
     - BoxScript
+    - CameraFollow
     - CircleAnimation
     - DontDestory
+    - FallingBoxScript
     - PlanetController
     - PlayerScript
     - WhiteHoleScript
@@ -33,8 +35,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -111,29 +115,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12352}
     - Class: 114
-      Script: {instanceID: 12870}
+      Script: {instanceID: 12868}
     - Class: 114
-      Script: {instanceID: 13078}
+      Script: {instanceID: 13076}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 13138}
     - Class: 114
-      Script: {instanceID: 13290}
+      Script: {instanceID: 13288}
     - Class: 114
-      Script: {instanceID: 13356}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13534}
+      Script: {instanceID: 13532}
     - Class: 114
-      Script: {instanceID: 13912}
+      Script: {instanceID: 13910}
     - Class: 114
-      Script: {instanceID: 13926}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 14510}
+      Script: {instanceID: 14508}
     - Class: 114
-      Script: {instanceID: 14564}
+      Script: {instanceID: 14562}
+    - Class: 114
+      Script: {instanceID: 14612}
     - Class: 114
       Script: {instanceID: 14614}
     - Class: 114
-      Script: {instanceID: 14616}
+      Script: {instanceID: 17988}
+    - Class: 114
+      Script: {instanceID: 22356}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -821,7 +829,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 0a260c165743e70c98dd55e29ccd72d6
+      Hash: 170bd0f56ee2f75bf52dac567fbf9fc5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlanetController
@@ -1011,7 +1019,19 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5b56da07ec867cbeec905b3ea5309aca
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraFollow
+  - hash:
+      serializedVersion: 2
+      Hash: 79f1e4d923cfc803b34c05ae2cb73dac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FallingBoxScript
   platform: 5
   scenePathNames:
   - Assets/Scenes/DemoScene.unity
-  playerPath: "D:/ECS \uAC15\uC758/Build/Walker.exe"
+  playerPath: "D:/ECS \uAC15\uC758/bulid/Walker.exe"

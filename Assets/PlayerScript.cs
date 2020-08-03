@@ -120,11 +120,7 @@ public class PlayerScript : MonoBehaviour
     private void Reset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        /*
-        this.transform.position = responePos; // falldown check
-        rd2d.velocity = Vector2.zero;
-        this.GetComponent<PlanetController>().resetAll();
-        */
+
     }
 
     private void FixedUpdate()

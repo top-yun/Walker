@@ -1542,7 +1542,7 @@ MonoBehaviour:
   boundary: {fileID: 1028405852751244, guid: b1d676d9f7cf04b4fb2414303514ede2, type: 3}
   maxRange: 7
   minRange: 3
-  timeDelay: 0.3
+  timeDelay: 0.5
   blackCooltime: {fileID: 0}
   whiteCooltime: {fileID: 0}
 --- !u!1 &8631745515112352532

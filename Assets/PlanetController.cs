@@ -88,10 +88,10 @@ public class PlanetController : MonoBehaviour
                 if (hasMaxBoundary == null)
                 {
                     hasMaxBoundary = Instantiate(boundary, this.transform);
-                    hasMinBoundary = Instantiate(boundary, this.transform);
+                    // hasMinBoundary = Instantiate(boundary, this.transform);
 
                     hasMaxBoundary.transform.localScale = new Vector2( 4* maxRange, 4* maxRange);
-                    hasMinBoundary.transform.localScale = new Vector2(4 * minRange, 4 * minRange);
+                    // hasMinBoundary.transform.localScale = new Vector2(4 * minRange, 4 * minRange);
                 }
                 hasClicked = hole.blackhole;
                 delayCorou = StartCoroutine(Delay());
@@ -129,13 +129,12 @@ public class PlanetController : MonoBehaviour
             Vector3 rayDir = new Vector3(ray.origin.x, ray.origin.y);
             float distance = Vector3.Distance(rayDir, this.transform.position);
 
-            if (maxRange > distance && minRange < distance)
-            {
-                if (hasClicked == hole.blackhole)
-                    hasBlackhole = Instantiate(Blackhole, rayDir, transform.rotation);
-                else if (hasClicked == hole.whitehole)
-                    hasWhitehole = Instantiate(Whitehole, rayDir, transform.rotation);
-            }
+
+            if (hasClicked == hole.blackhole && maxRange > distance)
+                hasBlackhole = Instantiate(Blackhole, rayDir, transform.rotation);
+            else if (hasClicked == hole.whitehole && maxRange > distance && minRange < distance)
+                hasWhitehole = Instantiate(Whitehole, rayDir, transform.rotation);
+            
             StopCoroutine(delayCorou);
             Time.timeScale = 1;
             Destroy(hasMaxBoundary);
