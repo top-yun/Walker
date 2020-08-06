@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4783883586906548683}
   - component: {fileID: 4828334825494286676}
   - component: {fileID: 5642110098261721953}
-  - component: {fileID: -2004965136341311746}
   m_Layer: 0
   m_Name: blackhole
   m_TagString: Untagged
@@ -101,19 +100,3 @@ MonoBehaviour:
   objGravityBound: 15
   firstDragTime: 2
   firstDragRate: 2
---- !u!58 &-2004965136341311746
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3353831444775564720}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.055

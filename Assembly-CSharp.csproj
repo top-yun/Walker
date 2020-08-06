@@ -78,6 +78,7 @@
     <Compile Include="Assets\Sepiroth\Demo\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Sepiroth\Demo\Scripts\SceneSelecter.cs" />
+    <Compile Include="Assets\SwitchScript.cs" />
     <Compile Include="Assets\WhiteHoleScript.cs" />
     <None Include="Assets\Sepiroth\LICENSE.txt" />
     <None Include="Assets\Sepiroth\README.txt" />

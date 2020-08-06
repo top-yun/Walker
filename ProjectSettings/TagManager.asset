@@ -8,6 +8,8 @@ TagManager:
   - Box
   - Spike
   - FallingBox
+  - Portal
+  - Switch
   layers:
   - Default
   - TransparentFX

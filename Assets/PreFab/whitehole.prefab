@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4412261687428448670}
   - component: {fileID: 3319891696441349955}
   - component: {fileID: 7672013939454420263}
-  - component: {fileID: -7289312338249333516}
   m_Layer: 0
   m_Name: whitehole
   m_TagString: Untagged
@@ -101,19 +100,3 @@ MonoBehaviour:
   objGravityBound: 15
   firstDragTime: 2
   firstDragRate: 2
---- !u!58 &-7289312338249333516
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3676982653555928356}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.055
