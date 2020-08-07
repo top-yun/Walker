@@ -2,13 +2,13 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BlackHoleScript
-    - BoxScript
     - CameraFollow
     - CircleAnimation
     - DontDestory
     - FallingBoxScript
     - PlanetController
     - PlayerScript
+    - SwitchScript
     - WhiteHoleScript
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -35,10 +35,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -105,43 +103,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 11686}
     - Class: 114
-      Script: {instanceID: 12260}
+      Script: {instanceID: 12002}
     - Class: 114
-      Script: {instanceID: 12266}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12328}
+      Script: {instanceID: 12268}
     - Class: 114
-      Script: {instanceID: 12352}
+      Script: {instanceID: 12330}
     - Class: 114
-      Script: {instanceID: 12868}
+      Script: {instanceID: 12354}
     - Class: 114
-      Script: {instanceID: 13076}
+      Script: {instanceID: 12378}
     - Class: 114
-      Script: {instanceID: 13138}
+      Script: {instanceID: 12872}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13080}
     - Class: 114
-      Script: {instanceID: 13354}
+      Script: {instanceID: 13292}
     - Class: 114
-      Script: {instanceID: 13532}
+      Script: {instanceID: 13358}
     - Class: 114
-      Script: {instanceID: 13910}
+      Script: {instanceID: 13536}
     - Class: 114
-      Script: {instanceID: 13924}
+      Script: {instanceID: 13552}
     - Class: 114
-      Script: {instanceID: 14508}
+      Script: {instanceID: 13916}
     - Class: 114
-      Script: {instanceID: 14562}
+      Script: {instanceID: 13930}
     - Class: 114
-      Script: {instanceID: 14612}
+      Script: {instanceID: 14514}
     - Class: 114
-      Script: {instanceID: 14614}
+      Script: {instanceID: 14568}
     - Class: 114
-      Script: {instanceID: 17988}
+      Script: {instanceID: 14618}
     - Class: 114
-      Script: {instanceID: 22356}
+      Script: {instanceID: 14620}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -323,6 +321,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineExternalCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 5b56da07ec867cbeec905b3ea5309aca
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraFollow
   - hash:
       serializedVersion: 2
       Hash: b5eb08b578a2f2d80bb106cbe65ab501
@@ -521,6 +525,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: f732e5d0b2ac9ad0ca8c714700907810
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FallingBoxScript
   - hash:
       serializedVersion: 2
       Hash: 37de53a49708b087da4050fc1ca7a6ee
@@ -767,6 +777,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineVirtualCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 4b9c832da74bf3ba6227fc15a36a8ed6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SwitchScript
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -1019,18 +1035,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 5b56da07ec867cbeec905b3ea5309aca
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CameraFollow
-  - hash:
-      serializedVersion: 2
-      Hash: 79f1e4d923cfc803b34c05ae2cb73dac
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FallingBoxScript
   platform: 5
   scenePathNames:
   - Assets/Scenes/DemoScene.unity

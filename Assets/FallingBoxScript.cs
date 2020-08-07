@@ -5,7 +5,7 @@ using UnityEngine;
 public class FallingBoxScript : MonoBehaviour
 {
     public float time;
-    public GameObject fallingBox;
+    public float fallAndRespone;
 
     private Renderer krenderer;
     private WaitForSeconds falldown;
@@ -45,15 +45,21 @@ public class FallingBoxScript : MonoBehaviour
             krenderer.material.color = c;
             yield return falldown;
         }
-        
-        StartCoroutine(making());
+
+        if (fallAndRespone != 0)
+        {
+            StartCoroutine(making());
+        } else
+        {
+            Destroy(this.gameObject);
+        }
         
     }
 
     IEnumerator making()
     {
         boxCollider2D.isTrigger = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(fallAndRespone);
         boxCollider2D.isTrigger = false;
 
         Color c = krenderer.material.color;

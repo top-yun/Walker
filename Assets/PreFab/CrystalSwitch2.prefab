@@ -96,12 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d379f4cac4da84049afd9d377474e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchCase: 1
+  switchCase: 3
   Object:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  initAlpha: 0.5
+  Alpha: 0.5
 --- !u!50 &1290119675
 Rigidbody2D:
   serializedVersion: 4
