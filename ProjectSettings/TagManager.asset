@@ -10,6 +10,8 @@ TagManager:
   - FallingBox
   - Portal
   - Switch
+  - Music
+  - EscMenu
   layers:
   - Default
   - TransparentFX
