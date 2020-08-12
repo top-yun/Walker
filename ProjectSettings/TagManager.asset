@@ -12,6 +12,7 @@ TagManager:
   - Switch
   - Music
   - EscMenu
+  - BonusMap
   layers:
   - Default
   - TransparentFX

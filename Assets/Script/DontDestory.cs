@@ -9,6 +9,7 @@ public class DontDestory : MonoBehaviour
     private void Awake()
     {
         var backgroundMusics = GameObject.FindGameObjectsWithTag(tagStr);
+
         if (backgroundMusics.Length == 1)
         {
             DontDestroyOnLoad(this.gameObject);
